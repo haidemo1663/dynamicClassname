@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Renderlist from "./Component/renderlist";
 function App() {
+  const listname=[{
+    fistname:"Ngo",
+    lastname:"Van Hai",
+    handle:"@uom"
+  },
+  {
+    fistname:"Ngo",
+    lastname:"Van Hai",
+    handle:"@uom"
+  },{
+    fistname:"Ngo",
+    lastname:"Van Hai",
+    handle:"@uom"
+  }]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <table className="table-name">
+        <thead>
+          <tr>
+          <th>#</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>handle</th>
+          </tr>
+        </thead>
+        <tbody>
+            {
+              listname.map((item,index)=>
+                <Renderlist key={index} item={item} index={index}/>
+              )
+            }
+        </tbody>
+      </table>
     </div>
   );
 }
